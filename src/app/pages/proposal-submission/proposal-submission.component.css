@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.button-row{
+    margin: 0px 0px 0px 5px;
+  }
+  .cardCenter{
+    margin: 0px auto;
+    width: 30%;
+  }
+  .form-center {
+    display:block;
+    text-align: center;
+  }
+  .input-field {
+    min-width: 150px;
+    max-width: 300px;
+    width: 100%;
+  }
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
