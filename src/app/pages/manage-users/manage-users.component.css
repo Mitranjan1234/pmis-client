@@ -1,0 +1,30 @@
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .cardCenter{
+    margin: 0px 495px;
+  }
+  table {
+    width: 100%;
+ }
+td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 14px;
+}
+
+.mat-sort-header-container {
+    justify-content: center !important;
+}
