@@ -1,10 +1,22 @@
 <mat-toolbar color="primary">
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button> -->
-    
-    <span>CWDB || Project Management Information System</span>
-    <span class="spacer"></span>
-    <button mat-raised-button class="button-row" routerLink="/login" aria-label="Login">Login</button>    
-    <button mat-raised-button class="button-row" routerLink="/signup" aria-label="Sign up">Sign up</button>    
+  <span>CWDB || Project Management Information System</span>
+  <span class="spacer"></span>
+  <button *ngIf="!isLoggedIn" mat-raised-button class="button-row" [routerLink]="'login'" routerLinkActive="active"
+    aria-label="Login">Login</button>
+  <button *ngIf="!isLoggedIn" mat-raised-button class="button-row" [routerLink]="'signup'" routerLinkActive="active"
+    aria-label="Sign up">Sign up</button>
+  <span *ngIf="isLoggedIn && user">Welcome, {{user.name}}</span>
+  <a *ngIf="isLoggedIn && user" class="example-icon favorite-icon ml20 nav-item dropdown dropdown-toggle"
+    id="navbarDropdown" mat-button aria-label="Example icon-button with heart icon" role="button"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="../../../assets/images/manage-users.png" height="0px" width="32px"
+      class="avatar img-fluid rounded-circle me-1" alt="Chris Wood">
+  </a>
+  <div ngbDropdown class="dropdown">
+    <ul ngbDropdownMenu aria-labelledby="navbarDropdown" class="dropdown-menu">
+      <li><a class="dropdown-item" ngbDropdownItem [routerLink]="'admin/profile'">Profile</a></li>
+      <li><a class="dropdown-item" ngbDropdownItem (click)="logout()" [routerLink]="'login'">Sign out</a></li>
+      <li><a class="dropdown-item" ngbDropdownItem [routerLink]="'change-password'">Change Password</a></li>
+    </ul>
+  </div>
 </mat-toolbar>

@@ -38,7 +38,7 @@ import { BackupModuleComponent } from './pages/backup-module/backup-module.compo
 //import { TargetAudiaenceComponent } from './target-audiaence/target-audiaence.component';
 
 // Material Form Controls
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -72,13 +72,19 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
 // Material Popups & Modals
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogContent, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 // Material Data tables
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePassDialogComponent } from './pages/change-pass-dialog/change-pass-dialog.component';
+import { ResetPassDialogComponent } from './pages/reset-pass-dialog/reset-pass-dialog.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -91,13 +97,18 @@ import { MatTableModule } from '@angular/material/table';
     NavbarComponent,
     SignupComponent,
     ForgotPasswordComponent,
+    ProfileComponent,
     ManageUsersComponent,
     ProposalSubmissionComponent,
     ApprovalManagementComponent,
     ProgressReportComponent,
     FundManagementComponent,
     ReportSummeryComponent,
-    BackupModuleComponent
+    BackupModuleComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    ChangePassDialogComponent,
+    ResetPassDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,7 +131,11 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-  ], 
+    MatDialogModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    MatSnackBarModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

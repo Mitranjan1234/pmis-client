@@ -1,15 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css']
 })
-export class NavbarComponent {
+export class AdminDashboardComponent implements OnInit {
 
   title = 'material-responsive-sidenav';
   @ViewChild(MatSidenav, { static: false })

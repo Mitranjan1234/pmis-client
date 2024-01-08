@@ -1,71 +1,68 @@
-
-<!-- <div>hiii
-  <img style="height: 0%;width: 45%;" src="assets/images/travel-logo.jpg" alt="aa-logo">
-</div> -->
-<mat-card class="cardCenter">
-    <mat-card-title>
-      <img class="center" src="assets/images/login.png" alt="login-icon">
-      <p class="form-center">Login here!</p>
-    </mat-card-title>
-    <mat-card-content>
+<!-- <mat-card class="cardCenter">
+  <mat-card-title>
+    <img class="center" src="assets/images/login.png" alt="login-icon">
+    <p class="form-center">Login here!</p>
+  </mat-card-title>
+  <mat-card-content>
     <mat-divider></mat-divider> <br>
-    <form class="form-center" (ngSubmit)="onSubmit()" #myForm ="ngForm">
-      <!-- {{ myForm.value | json }} <br> -->
-      <!-- <mat-form-field class="input-field">
-        <mat-label>Month</mat-label>
-        <mat-select [(ngModel)]="formData.month" name = "month"required>
-          <mat-option value="January">January</mat-option>
-          <mat-option value="February">February</mat-option>
-          <mat-option value="March">March</mat-option>
-          <mat-option value="April">April</mat-option>
-          <mat-option value="May">May</mat-option>
-          <mat-option value="June">June</mat-option>
-          <mat-option value="July">July</mat-option>
-          <mat-option value="August">August</mat-option>
-          <mat-option value="September">September</mat-option>
-          <mat-option value="October">October</mat-option>
-          <mat-option value="November">November</mat-option>
-          <mat-option value="December">December</mat-option>
-        </mat-select>
-      </mat-form-field><br> -->
-      <!-- <mat-form-field class="input-field">
-        <mat-label>Origin</mat-label>
-        <input matInput type="text"
-             placeholder="Enter origin name"
-             [(ngModel)]="formData.origin" 
-             name="origin" required
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{option}}</mat-option>
-        </mat-autocomplete>
-      </mat-form-field><br> -->
+    <form class="form-center" (ngSubmit)="formSubmit()">
       <mat-form-field class="input-field">
         <mat-label>User name</mat-label>
-        <input matInput placeholder="Enter username" [(ngModel)]="formData.origin" name="username" >
+        <input matInput placeholder="Enter username" [(ngModel)]="loginData.username" name="username">
       </mat-form-field><br>
-      <!-- <mat-form-field class="input-field">
-        <mat-label>Destination</mat-label>
-        <input matInput type="text"
-             placeholder="Enter destination name"
-             [(ngModel)]="formData.destination" 
-             name="origin" required
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option *ngFor="let option1 of filteredOptions | async" [value]="option1">{{option1}}</mat-option>
-        </mat-autocomplete>
-      </mat-form-field><br> -->
       <mat-form-field class="input-field">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Enter password" [(ngModel)]="formData.destination" name="destination" >
+        <input matInput placeholder="Enter password" [(ngModel)]="loginData.password" name="password">
       </mat-form-field><br>
       <button mat-raised-button color="primary" routerLink="/home">Submit</button>
-      <button mat-raised-button class="button-row" type=reset (click)= "resetForm()" color="accent" routerLink="/">Reset</button><br><br>
+      <button mat-raised-button class="button-row" type=reset color="accent" routerLink="/">Reset</button><br><br>
       <a mat-list-item routerLink="/forgot-password">
-        <span >Forgot password?</span>
+        <span>Forgot password?</span>
       </a>
     </form>
-    </mat-card-content>  
-  </mat-card> 
-  
+  </mat-card-content>
+</mat-card> -->
+
+<div class="bootstrap-wrapper cardCenter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <mat-card>
+          <mat-card-title>
+            <img class="center" src="assets/images/login.png" alt="login-icon">
+            <p class="form-center">Login here!</p>
+          </mat-card-title>
+          <!-- {{ loginData | json }} -->
+          <form (ngSubmit)="onSubmit()">
+            <!-- username field -->
+            <mat-form-field class="full-width">
+              <mat-label>User Name</mat-label>
+              <input [(ngModel)]="loginData.username" name="username" required matInput placeholder="Enter here" />
+            </mat-form-field>
+
+            <!-- password field  -->
+
+            <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input [(ngModel)]="loginData.password" name="password" type="password" required matInput
+                placeholder="Enter here" />
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button mat-raised-button color="primary" type="submit">
+                Login
+              </button>
+              <button class="button-row" mat-raised-button color="accent" type="reset">
+                Reset
+              </button><br><br>
+            </div>
+          </form>
+          <div class="container text-center">
+            <button mat-button color="primary" (click)="forgotPasswordDialog()">Forgot
+              Password?</button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

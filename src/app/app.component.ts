@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pmis-client';
+  constructor(private ngxService: NgxUiLoaderService) { }
+
+  OnInit() {
+    this.ngxService.start();
+    setTimeout(() => { this.ngxService.stop() }, 20000);
+  }
+
 }

@@ -1,21 +1,21 @@
 <mat-card class="cardCenter">
-    <mat-card-title>
-      <img class="center" src="assets/images/register.png" alt="login-icon">
-      <p class="form-center">Register here!</p>
-    </mat-card-title>
-    <mat-card-content>
+  <mat-card-title>
+    <img class="center" src="assets/images/register.png" alt="login-icon">
+    <p class="form-center">Register here!</p>
+  </mat-card-title>
+  <mat-card-content>
     <mat-divider></mat-divider> <br>
-    <form class="form-center" (ngSubmit)="onSubmit()" #myForm ="ngForm">
-        <mat-form-field class="input-field">
+    <form class="form-center" (ngSubmit)="onSubmit()">
+      <mat-form-field class="input-field">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Enter name" [(ngModel)]="formData.origin" name="name" >
+        <input matInput placeholder="Enter name" [(ngModel)]="user.name" name="name">
       </mat-form-field><br>
       <!-- {{ myForm.value | json }} <br> -->
       <mat-form-field class="input-field">
         <mat-label>Role</mat-label>
-        <mat-select [(ngModel)]="formData.month" name = "role">
+        <mat-select [(ngModel)]="user.role" name="role">
           <mat-option value="Project PI">Project PI</mat-option>
-          <mat-option value="CWDB personnels">CWDB personnels</mat-option>
+          <mat-option value="CWDB personnel">CWDB personnel</mat-option>
         </mat-select>
       </mat-form-field><br>
       <!-- <mat-form-field class="input-field">
@@ -32,19 +32,19 @@
       </mat-form-field><br> -->
       <mat-form-field class="input-field">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Enter email" [(ngModel)]="formData.destination" name="email" >
+        <input matInput placeholder="Enter email" [(ngModel)]="user.username" name="email">
       </mat-form-field><br>
       <mat-form-field class="input-field">
         <mat-label>Enter Password</mat-label>
-        <input matInput placeholder="Enter password" [(ngModel)]="formData.destination" name="pass" >
+        <input matInput placeholder="Enter password" type="password" [(ngModel)]="user.password" name="password">
       </mat-form-field><br>
       <mat-form-field class="input-field">
         <mat-label>Confirm Password</mat-label>
-        <input matInput placeholder="Enter password" [(ngModel)]="formData.destination" name="pass" >
+        <input matInput placeholder="Enter password" type="password" [(ngModel)]="user.cnf_password"
+          name="cnf_password">
       </mat-form-field><br>
-      <button mat-raised-button color="primary" >Register</button>
-      <button mat-raised-button class="button-row" type=reset (click)= "resetForm()" color="accent">Reset</button>
+      <button mat-raised-button color="primary">Register</button>
+      <button mat-raised-button class="button-row" type=reset color="accent">Reset</button>
     </form>
-    </mat-card-content>  
-  </mat-card> 
-  
+  </mat-card-content>
+</mat-card>

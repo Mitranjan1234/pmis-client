@@ -56,6 +56,9 @@
         <mat-label>Co-Investigator</mat-label>
         <input matInput placeholder="Enter co-investigator" [(ngModel)]="formData.destination" name="email" >
       </mat-form-field><br>
+      <div class="form-center">
+        <input type="file" class="file-input" #fileUpload> 
+      </div><br>
       <button mat-raised-button color="primary" >Submit</button>
       <button mat-raised-button class="button-row" color="warn" >Save as draft</button>
       <button mat-raised-button class="button-row" type=reset (click)= "resetForm()" color="accent">Reset</button>

@@ -8,6 +8,12 @@ export interface Audience {
   DEST_AIRPORT_CD:string,	
 }
 
+export interface contact_details {
+  name : string,	
+  email:string,	
+  pass:string,	
+}
+
 @Component({
   selector: 'app-manage-users',
   templateUrl: './manage-users.component.html',
@@ -21,6 +27,8 @@ export class ManageUsersComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  contact_details: any;
+contacts: any;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -151,3 +159,26 @@ const ELEMENT_DATA: Audience[] = [
  
 
 ];
+
+const contacts: contact_details[] = [
+  {
+    "name": "LTW3036",
+    "email": "DFW",
+    "pass": "BOS",
+  },
+  {
+    "name": "LTW3036",
+    "email": "DFW",
+    "pass": "BOS",
+  },
+  {
+    "name": "LTW3036",
+    "email": "DFW",
+    "pass": "BOS",
+  },
+  {
+    "name": "LTW3036",
+    "email": "DFW",
+    "pass": "BOS",
+  },
+]

@@ -1,0 +1,38 @@
+<div class="bootstrap-wrapper cardCenter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- <mat-card> -->
+                <mat-card-title>
+                    <h3 class="form-center">Change Password</h3>
+                </mat-card-title>
+                <br>
+                <!-- {{ loginData | json }} -->
+                <form (ngSubmit)="onSubmit()">
+                    <!-- username field -->
+                    <mat-form-field class="full-width">
+                        <mat-label>Old Password</mat-label>
+                        <input name="oldpass" type="password" required matInput placeholder="Enter here" />
+                    </mat-form-field>
+
+                    <!-- password field  -->
+
+                    <mat-form-field class="full-width">
+                        <mat-label>New Password</mat-label>
+                        <input name="newPassword" type="password" required matInput placeholder="Enter here" />
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Confirm Password</mat-label>
+                        <input name="confPassword" type="password" required matInput placeholder="Enter here" />
+                    </mat-form-field>
+                    <mat-card-actions class="text-center">
+                        <button mat-raised-button color="primary">Save</button>
+                        <button mat-raised-button color="accent">Close</button>
+                    </mat-card-actions>
+                </form>
+                <!-- </mat-card> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.css']
 })
-export class NavbarComponent {
-
+export class UserDashboardComponent implements OnInit {
   title = 'material-responsive-sidenav';
   @ViewChild(MatSidenav, { static: false })
   sidenav!: MatSidenav;
@@ -40,5 +37,4 @@ export class NavbarComponent {
       this.isCollapsed = !this.isCollapsed;
     }
   }
-
 }
