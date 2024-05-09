@@ -1,0 +1,27 @@
+<form class="example-form">
+    <table class="example-full-width" cellspacing="0"><br>
+<h3>Attach Project Summary, Budget Justification and other required documentation in PDF or doc file fromate.</h3>
+
+<div class="form-center">
+    <mat-label>Upload Project Summary</mat-label>
+    <input type="file" class="button-row"  color="primary" #fileUpload><br>
+
+    <mat-label>Upload Project Budget Justification</mat-label>
+    <input type="file" class="button-row" #fileUpload><br>
+
+    <mat-label>Upload other file in any</mat-label>
+    <input type="file" class="file-input" #fileUpload> 
+</div>
+</table>
+</form>
+<div class="container text-center">
+    <button class="button-row" mat-raised-button color="primary" cdkStepperPrevious>
+        Go To Previous
+    </button>
+    <button class="button-row" mat-raised-button color="accent">
+        Save as Draft
+    </button>
+    <button class="button-row" mat-raised-button color="primary" cdkStepperNext>
+        Go To Next
+    </button>
+</div>

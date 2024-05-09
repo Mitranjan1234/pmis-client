@@ -10,7 +10,6 @@ import { FundManagementComponent } from './pages/fund-management/fund-management
 import { LoginComponent } from './pages/login/login.component';
 import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
 import { ProgressReportComponent } from './pages/progress-report/progress-report.component';
-import { ProposalSubmissionComponent } from './pages/proposal-submission/proposal-submission.component';
 import { ReportSummeryComponent } from './pages/report-summery/report-summery.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AdminGuard } from './services/admin.guard';
@@ -20,6 +19,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePassDialogComponent } from './pages/change-pass-dialog/change-pass-dialog.component';
 import { ResetPassDialogComponent } from './pages/reset-pass-dialog/reset-pass-dialog.component';
+import { ProposalSubmissionComponent } from './pages/user/proposal-submission/proposal-submission.component';
+
 
 
 const routes: Routes = [

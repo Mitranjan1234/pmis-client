@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProposalSubmissionComponent } from './proposal-submission.component';
 
@@ -6,12 +6,12 @@ describe('ProposalSubmissionComponent', () => {
   let component: ProposalSubmissionComponent;
   let fixture: ComponentFixture<ProposalSubmissionComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ ProposalSubmissionComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProposalSubmissionComponent);

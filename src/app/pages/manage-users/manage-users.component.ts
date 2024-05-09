@@ -1,11 +1,13 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 export interface Audience {
-  MEM_NUM : string,	
-  ORIG_AIRPORT_CD:string,	
-  DEST_AIRPORT_CD:string,	
+  "name": string,
+  "userId": string,
+  "role" : string,
+  "status" : string,
 }
 
 export interface contact_details {
@@ -21,164 +23,100 @@ export interface contact_details {
 })
 
 export class ManageUsersComponent implements AfterViewInit {
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  displayedColumns: string[] = ['Name', 'Gender', 'Date of Birth','Role','Status','Edit','View'];
-  dataSource = new MatTableDataSource<Audience>(ELEMENT_DATA);
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  displayedColumns: string[] = ['name', 'userId','role','status','action'];
+  dataSource = new MatTableDataSource<Audience>(USERS_DATA);
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  sort!: MatSort;
   contact_details: any;
 contacts: any;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 }
 
-const ELEMENT_DATA: Audience[] = [
+const USERS_DATA: Audience[] = [
   {
-    "MEM_NUM": "LTW3036",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Amit",
+    "userId": "1",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "SRT3166",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Ram",
+    "userId": "3",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "PQL4222",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Bittu",
+    "userId": "4",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "LSW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Golu",
+    "userId": "6",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "KTW6036",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Anil",
+    "userId": "2",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "KTM3836",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Mohan",
+    "userId": "5",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "TWS1320",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Karan",
+    "userId": "7",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "KMP3035",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Manoj",
+    "userId": "8",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "JOY4567",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
+    "name": "Praveen",
+    "userId": "9",
+    "role" :"dsf",
+    "status" :"dsf",
+   
   },
   {
-    "MEM_NUM": "MIT3040",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "JKW3030",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "PRT5060",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "HEL3040",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "HEX1212",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "LTW3136",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "HLK2425",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
-  {
-    "MEM_NUM": "HND3423",
-    "ORIG_AIRPORT_CD": "DFW",
-    "DEST_AIRPORT_CD": "BOS",
-  },
- 
-
-];
-
-const contacts: contact_details[] = [
-  {
-    "name": "LTW3036",
-    "email": "DFW",
-    "pass": "BOS",
-  },
-  {
-    "name": "LTW3036",
-    "email": "DFW",
-    "pass": "BOS",
-  },
-  {
-    "name": "LTW3036",
-    "email": "DFW",
-    "pass": "BOS",
-  },
-  {
-    "name": "LTW3036",
-    "email": "DFW",
-    "pass": "BOS",
-  },
+    "name": "Rohit",
+    "userId": "10",
+    "role" :"dsf",
+    "status" :"dsf",
+   
+  }
 ]

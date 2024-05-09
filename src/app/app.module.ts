@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
-import { ProposalSubmissionComponent } from './pages/proposal-submission/proposal-submission.component';
+import { ProposalSubmissionComponent } from './pages/user/proposal-submission/proposal-submission.component';
 import { ApprovalManagementComponent } from './pages/approval-management/approval-management.component';
 import { ProgressReportComponent } from './pages/progress-report/progress-report.component';
 import { FundManagementComponent } from './pages/fund-management/fund-management.component';
@@ -41,13 +41,15 @@ import { BackupModuleComponent } from './pages/backup-module/backup-module.compo
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+//import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 // Material Navigation
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -85,6 +87,17 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePassDialogComponent } from './pages/change-pass-dialog/change-pass-dialog.component';
 import { ResetPassDialogComponent } from './pages/reset-pass-dialog/reset-pass-dialog.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import { StepperComponent } from './pages/user/stepper/stepper.component';
+import { ContactComponent } from './pages/user/proposal-submission/contact/contact.component';
+import { FinishComponent } from './pages/user/proposal-submission/finish/finish.component';
+import { InformationComponent } from './pages/user/proposal-submission/information/information.component';
+import { SecurityComponent } from './pages/user/proposal-submission/security/security.component';
+import { ProjectInfoComponent } from './pages/user/proposal-submission/project-info/project-info.component';
+import { PrincipalInvestigatorInfoComponent } from './pages/user/proposal-submission/principal-investigator-info/principal-investigator-info.component';
+import { CoPrincipalInvestigatorInfoComponent } from './pages/user/proposal-submission/co-principal-investigator-info/co-principal-investigator-info.component';
+import { UploadAttachmentsComponent } from './pages/user/proposal-submission/upload-attachments/upload-attachments.component';
+import { ReviewSubmitComponent } from './pages/user/proposal-submission/review-submit/review-submit.component';
 
 
 @NgModule({
@@ -109,6 +122,16 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     UserDashboardComponent,
     ChangePassDialogComponent,
     ResetPassDialogComponent,
+    StepperComponent,
+    ContactComponent,
+    FinishComponent,
+    InformationComponent,
+    SecurityComponent,
+    ProjectInfoComponent,
+    PrincipalInvestigatorInfoComponent,
+    CoPrincipalInvestigatorInfoComponent,
+    UploadAttachmentsComponent,
+    ReviewSubmitComponent,
   ],
   imports: [
     BrowserModule,
@@ -134,9 +157,18 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     MatDialogModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSortModule,
+    CdkStepperModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  exports:[CdkStepperModule],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

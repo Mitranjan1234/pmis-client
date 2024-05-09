@@ -1,0 +1,89 @@
+<form class="example-form"><br>
+    <h1 class="text-center">Project Information</h1>
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Project Title</mat-label>
+                    <input matInput placeholder="Title">
+                </mat-form-field>
+            </td>   
+            <td>
+                <!-- <mat-form-field class="example-full-width">
+                    <mat-label>Type of Project </mat-label>
+                    <mat-select placeholder="Select" class="example-full-width">
+                        <mat-option >Medical</mat-option>
+                        <mat-option >Textile</mat-option>
+                        <mat-option >Analytical</mat-option>
+                        <mat-option >Others</mat-option>
+                   </mat-select>
+               </mat-form-field>-->
+               <mat-form-field class="example-full-width"> 
+                <mat-label>Project Category</mat-label>
+                <mat-select placeholder="Select" class="example-full-width">
+                  <mat-option value="Project PI">Basic Research</mat-option>
+                  <mat-option value="CWDB personnels">Applied Research</mat-option>
+                  <mat-option value="Project PI">Technology Development</mat-option>
+                  <mat-option value="CWDB personnels">Any other </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td> 
+        </tr> 
+
+        <tr>
+            <td> 
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Project Description"></textarea>
+                </mat-form-field>
+            </td> 
+            <td>
+                <mat-label>Project Submission Type</mat-label>
+                <mat-radio-group class="example-full-width">
+                    <mat-radio-button value="1">New Proposal</mat-radio-button>
+                    <mat-radio-button value="2">Supplement</mat-radio-button>
+                    <mat-radio-button value="2">Continuaton</mat-radio-button>
+                </mat-radio-group>
+            </td>
+        </tr>
+
+        <tr>     
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Project Duration</mat-label>
+                    <input matInput placeholder="Duration in months">
+                  </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Amount Requested</mat-label>
+                    <input matInput placeholder="Amount in R.s">
+                  </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>    
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput [matDatepicker]="picker" placeholder="Proposed Project Start Date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field  class="example-full-width">
+                    <input matInput [matDatepicker]="picker2" placeholder="Proposed Project End Date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix  [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<div class="container text-center">
+    <button class="button-row" mat-raised-button color="primary" cdkStepperNext>
+        Go To Next 
+    </button>
+</div>
