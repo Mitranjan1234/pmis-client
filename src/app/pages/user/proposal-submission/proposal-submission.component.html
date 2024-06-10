@@ -19,16 +19,16 @@
             <app-finish></app-finish>
           </cdk-step> -->
         <cdk-step [label]="'Project Information'">
-            <app-project-info></app-project-info>
+            <app-project-info #projectInfo></app-project-info>
         </cdk-step>
         <cdk-step [label]="'PI Information'">
-            <app-principal-investigator-info></app-principal-investigator-info>
+            <app-principal-investigator-info #piInfo></app-principal-investigator-info>
         </cdk-step>
         <cdk-step [label]="'Co-PI Information'">
-            <app-co-principal-investigator-info></app-co-principal-investigator-info>
+            <app-co-principal-investigator-info #coPiInfo></app-co-principal-investigator-info>
         </cdk-step>
         <cdk-step [label]="'Upload Attachments'">
-            <app-upload-attachments></app-upload-attachments>
+            <app-upload-attachments #upload></app-upload-attachments>
         </cdk-step>
         <cdk-step [label]="'Review and Submit'">
             <app-review-submit></app-review-submit>
@@ -37,4 +37,9 @@
       </div>
     </div>
   </div>
-  
+  <p>
+    {{projectInfo.projectInformationData| json}},
+    {{piInfo.piInformation| json}},
+    {{coPiInfo.coPiInformation| json}},
+    {{upload.uploadAttachments| json}},
+</p>

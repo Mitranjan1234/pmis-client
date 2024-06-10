@@ -51,72 +51,45 @@ contacts: any;
 const USERS_DATA: Audience[] = [
   {
     "name": "Amit",
-    "userId": "1",
-    "role" :"dsf",
-    "status" :"dsf",
+    "userId": "amit.k@gmail.com",
+    "role" :"Project PI",
+    "status" :"Active",
    
   },
   {
-    "name": "Ram",
-    "userId": "3",
-    "role" :"dsf",
-    "status" :"dsf",
+    "name": "Mitranjan",
+    "userId": "mitranjan.k@gmail.com",
+    "role" :"CWDB personnels",
+    "status" :"Active",
    
   },
   {
-    "name": "Bittu",
-    "userId": "4",
-    "role" :"dsf",
-    "status" :"dsf",
+    "name": "Ravi",
+    "userId": "ravi.k@gmail.com",
+    "role" :"Project PI",
+    "status" :"Active",
    
   },
   {
-    "name": "Golu",
-    "userId": "6",
-    "role" :"dsf",
-    "status" :"dsf",
+    "name": "Nilesh",
+    "userId": "nilesh.k@gmail.com",
+    "role" :"CWDB personnels",
+    "status" :"Active",
    
   },
   {
-    "name": "Anil",
-    "userId": "2",
-    "role" :"dsf",
-    "status" :"dsf",
+    "name": "Kamlesh",
+    "userId": "kamlesh.k@gmail.com",
+    "role" :"Project PI",
+    "status" :"Active",
    
   },
   {
-    "name": "Mohan",
-    "userId": "5",
-    "role" :"dsf",
-    "status" :"dsf",
-   
-  },
-  {
-    "name": "Karan",
-    "userId": "7",
-    "role" :"dsf",
-    "status" :"dsf",
-   
-  },
-  {
-    "name": "Manoj",
-    "userId": "8",
-    "role" :"dsf",
-    "status" :"dsf",
-   
-  },
-  {
-    "name": "Praveen",
-    "userId": "9",
-    "role" :"dsf",
-    "status" :"dsf",
-   
-  },
-  {
-    "name": "Rohit",
-    "userId": "10",
-    "role" :"dsf",
-    "status" :"dsf",
+    "name": "Sukesh",
+    "userId": "sukesh.k@gmail.com",
+    "role" :"CWDB personnels",
+    "status" :"Active",
    
   }
+  
 ]

@@ -1,17 +1,18 @@
 <form class="example-form"><br>
     <h1 class="text-center">Principal Investigator Details</h1>
+    <!-- {{ piInformation | json }} -->
     <table class="example-full-width" cellspacing="0">
         <tr>
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Name</mat-label>
-                    <input matInput placeholder="Title">
+                    <input matInput [(ngModel)]="piInformation.name" name="name" placeholder="name">
                 </mat-form-field>
             </td>   
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Designation</mat-label>
-                    <input matInput placeholder="Designation">
+                    <input matInput [(ngModel)]="piInformation.desination" name="desination" placeholder="Designation">
                 </mat-form-field>
             </td> 
         </tr> 
@@ -19,13 +20,13 @@
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Qualifications</mat-label>
-                    <input matInput placeholder="Qualifications">
+                    <input matInput [(ngModel)]="piInformation.qualification" name="qualification" placeholder="Qualifications">
                 </mat-form-field>
             </td>   
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Institution</mat-label>
-                    <input matInput placeholder="Institution">
+                    <input matInput [(ngModel)]="piInformation.institution" name="institution" placeholder="Institution">
                 </mat-form-field>
             </td> 
         </tr> 
@@ -33,16 +34,16 @@
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Department</mat-label>
-                    <input matInput placeholder="Institution">
+                    <input matInput [(ngModel)]="piInformation.department" name="department" placeholder="Institution">
                 </mat-form-field>
             </td> 
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Gender</mat-label>
-                    <mat-select placeholder="Select" class="example-full-width">
-                        <mat-option >Male</mat-option>
-                        <mat-option >Female</mat-option>
-                        <mat-option >Others</mat-option>
+                    <mat-select matInput [(ngModel)]="piInformation.gender" name="gender" placeholder="Select" class="example-full-width">
+                        <mat-option  value="Male">Male</mat-option>
+                        <mat-option  value="Female">Female</mat-option>
+                        <mat-option  value="Others">Others</mat-option>
                    </mat-select>
                </mat-form-field>
             </td>   
@@ -52,20 +53,20 @@
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email">
+                    <input matInput [(ngModel)]="piInformation.email" name="email" placeholder="Email">
                 </mat-form-field>
             </td> 
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Mobile</mat-label>
-                    <input matInput placeholder="Mobile">
+                    <input matInput [(ngModel)]="piInformation.mobile" name="mobile" placeholder="Mobile">
                 </mat-form-field>
             </td> 
         </tr>
         <tr>
             <td>
                 <mat-form-field class="example-full-width">
-                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="piInformation.dataOfBirth" name="dataOfBirth"  placeholder="Date of Birth">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
@@ -73,7 +74,7 @@
             </td>
             <td> 
                 <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Address"></textarea>
+                    <textarea matInput [(ngModel)]="piInformation.address" name="address" placeholder="Address"></textarea>
                 </mat-form-field>
             </td> 
         </tr>
@@ -91,3 +92,6 @@
         Go To Next
     </button>
 </div>
+
+<app-project-info #projectInfo hidden></app-project-info>
+<p><b>Project Title:</b>  {{projectInfo.projectInformationData.projectTitle}} </p>

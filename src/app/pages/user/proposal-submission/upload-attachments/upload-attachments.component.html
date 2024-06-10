@@ -1,20 +1,36 @@
 <form class="example-form">
-    <table class="example-full-width" cellspacing="0"><br>
-<h3>Attach Project Summary, Budget Justification and other required documentation in PDF or doc file fromate.</h3>
+    <br><h1 class=" text-center">File Upload</h1>
+    <!-- <table class="example-full-width" cellspacing="0"> -->
+<p class="text-center">Note: Attach Project Summary, Budget Justification and other required documentation in any file fromate.</p>
+ <div class="container text-center" >
+    <h2>Upload Project Summary</h2>
+    <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="uploadAttachments.projectSummary" name="projectSummary">
+    <button (click)="onUpload()">Upload</button>
+    <div *ngIf="uploadProgress !== null">
+      <p>Upload Progress: {{ uploadProgress }}%</p>
+    </div>
+  </div>
 
-<div class="form-center">
-    <mat-label>Upload Project Summary</mat-label>
-    <input type="file" class="button-row"  color="primary" #fileUpload><br>
+  <div class="container text-center">
+    <h2>Upload Project Budget Justification</h2>
+    <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="uploadAttachments.projectBudget" name="projectBudget" >
+    <button (click)="onUpload()">Upload</button>
+    <div *ngIf="uploadProgress !== null">
+      <p>Upload Progress: {{ uploadProgress }}%</p>
+    </div>
+  </div>
 
-    <mat-label>Upload Project Budget Justification</mat-label>
-    <input type="file" class="button-row" #fileUpload><br>
-
-    <mat-label>Upload other file in any</mat-label>
-    <input type="file" class="file-input" #fileUpload> 
-</div>
-</table>
+  <div class="container text-center">
+    <h2>Upload other file in any</h2>
+    <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="uploadAttachments.other" name="other" >
+    <button (click)="onUpload()">Upload</button>
+    <div *ngIf="uploadProgress !== null">
+      <p>Upload Progress: {{ uploadProgress }}%</p>
+    </div>
+  </div>
+<!-- </table> -->
 </form>
-<div class="container text-center">
+<div class="container text-center"> <br>
     <button class="button-row" mat-raised-button color="primary" cdkStepperPrevious>
         Go To Previous
     </button>

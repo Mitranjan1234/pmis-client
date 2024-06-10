@@ -8,12 +8,12 @@
     <form class="form-center" (ngSubmit)="onSubmit()">
       <mat-form-field class="input-field">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Enter name" [(ngModel)]="user.name" name="name">
+        <input matInput placeholder="Enter name" [(ngModel)]="user.name" name="name" required>
       </mat-form-field><br>
       <!-- {{ myForm.value | json }} <br> -->
       <mat-form-field class="input-field">
         <mat-label>Role</mat-label>
-        <mat-select [(ngModel)]="user.role" name="role">
+        <mat-select [(ngModel)]="user.role" name="role" required>
           <mat-option value="Project PI">Project PI</mat-option>
           <mat-option value="CWDB personnel">CWDB personnel</mat-option>
         </mat-select>
@@ -32,16 +32,16 @@
       </mat-form-field><br> -->
       <mat-form-field class="input-field">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Enter email" [(ngModel)]="user.username" name="email">
+        <input matInput placeholder="Enter email" [(ngModel)]="user.username" name="email" required>
       </mat-form-field><br>
       <mat-form-field class="input-field">
         <mat-label>Enter Password</mat-label>
-        <input matInput placeholder="Enter password" type="password" [(ngModel)]="user.password" name="password">
+        <input matInput placeholder="Enter password" type="password" [(ngModel)]="user.password" name="password" required>
       </mat-form-field><br>
       <mat-form-field class="input-field">
         <mat-label>Confirm Password</mat-label>
         <input matInput placeholder="Enter password" type="password" [(ngModel)]="user.cnf_password"
-          name="cnf_password">
+          name="cnf_password" required>
       </mat-form-field><br>
       <button mat-raised-button color="primary">Register</button>
       <button mat-raised-button class="button-row" type=reset color="accent">Reset</button>

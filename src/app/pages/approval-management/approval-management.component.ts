@@ -44,83 +44,10 @@ contacts: any;
 }
 const USERS_DATA: Audience[] = [
   {
-    "name": "Amit",
-    "userId": "1",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Ram",
-    "userId": "3",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Bittu",
-    "userId": "4",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Golu",
-    "userId": "6",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Anil",
-    "userId": "2",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Mohan",
-    "userId": "5",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Karan",
-    "userId": "7",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Manoj",
-    "userId": "8",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Praveen",
-    "userId": "9",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
-  },
-  {
-    "name": "Rohit",
-    "userId": "10",
-    "role" :"dsf",
-    "status" :"dsf",
-    "submissionType":"sdf",
-   
+    "name": "Artificial Intelligence for Social Impact: Leveraging AI for Positive Change",
+    "userId": "Technology Development",
+    "role" :"10000000",
+    "status" :"36",
+    "submissionType": "New Proposal"
   }
 ]

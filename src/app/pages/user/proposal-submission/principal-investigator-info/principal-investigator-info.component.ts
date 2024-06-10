@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalInvestigatorInfoComponent implements OnInit {
 
+  piInformation = {
+   "name": "",
+   "desination": "",
+   "qualification": "",
+   "institution": "",
+   "department": "",
+   "gender": "",
+   "email": "",
+   "mobile": "",
+   "dataOfBirth": "",
+   "address": ""
+  }
+  
   constructor() { }
 
   ngOnInit(): void {

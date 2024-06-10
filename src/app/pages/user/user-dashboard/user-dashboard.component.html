@@ -31,6 +31,12 @@
                 <mat-icon>assignment</mat-icon> <span *ngIf="!isCollapsed" class="nav-caption">Proposal
                     Submission</span>
             </a>
+            <a mat-list-item [routerLink]="'track-proposal'" routerLinkActive="active">
+                <mat-icon>assignment</mat-icon> <span *ngIf="!isCollapsed" class="nav-caption">Track Proposal</span>
+            </a>
+            <a mat-list-item [routerLink]="'proposal-progress'" routerLinkActive="active">
+                <mat-icon>assignment</mat-icon> <span *ngIf="!isCollapsed" class="nav-caption">Proposal Progress</span>
+            </a>
             <!-- <a mat-list-item routerLink="/login">
                 <mat-icon>exit_to_app</mat-icon> <span *ngIf="!isCollapsed" class="nav-caption">Log out</span>
             </a> -->

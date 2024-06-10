@@ -98,6 +98,8 @@ import { PrincipalInvestigatorInfoComponent } from './pages/user/proposal-submis
 import { CoPrincipalInvestigatorInfoComponent } from './pages/user/proposal-submission/co-principal-investigator-info/co-principal-investigator-info.component';
 import { UploadAttachmentsComponent } from './pages/user/proposal-submission/upload-attachments/upload-attachments.component';
 import { ReviewSubmitComponent } from './pages/user/proposal-submission/review-submit/review-submit.component';
+import { TrackProposalComponent } from './pages/user/track-proposal/track-proposal.component';
+import { ProposalProgressComponent } from './pages/user/proposal-progress/proposal-progress.component';
 
 
 @NgModule({
@@ -132,6 +134,8 @@ import { ReviewSubmitComponent } from './pages/user/proposal-submission/review-s
     CoPrincipalInvestigatorInfoComponent,
     UploadAttachmentsComponent,
     ReviewSubmitComponent,
+    TrackProposalComponent,
+    ProposalProgressComponent,
   ],
   imports: [
     BrowserModule,

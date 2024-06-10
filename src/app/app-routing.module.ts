@@ -20,6 +20,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePassDialogComponent } from './pages/change-pass-dialog/change-pass-dialog.component';
 import { ResetPassDialogComponent } from './pages/reset-pass-dialog/reset-pass-dialog.component';
 import { ProposalSubmissionComponent } from './pages/user/proposal-submission/proposal-submission.component';
+import { ProposalProgressComponent } from './pages/user/proposal-progress/proposal-progress.component';
+import { TrackProposalComponent } from './pages/user/track-proposal/track-proposal.component';
 
 
 
@@ -119,6 +121,15 @@ const routes: Routes = [
         path: 'proposal-submission',
         component: ProposalSubmissionComponent,
       },
+      {
+        path: 'track-proposal',
+        component: TrackProposalComponent,
+      },
+      {
+        path: 'proposal-progress',
+        component: ProposalProgressComponent,
+      },
+
     ]
   }
 ];

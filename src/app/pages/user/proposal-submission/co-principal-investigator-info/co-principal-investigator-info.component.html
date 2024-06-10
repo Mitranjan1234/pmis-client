@@ -1,83 +1,84 @@
 <form class="example-form"><br>
     <h1 class="text-center">Co-Principal Investigator Details</h1>
-    <table class="example-full-width" cellspacing="0">
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Title">
-                </mat-form-field>
-            </td>   
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Designation</mat-label>
-                    <input matInput placeholder="Designation">
-                </mat-form-field>
-            </td> 
-        </tr> 
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Qualifications</mat-label>
-                    <input matInput placeholder="Qualifications">
-                </mat-form-field>
-            </td>   
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Institution</mat-label>
-                    <input matInput placeholder="Institution">
-                </mat-form-field>
-            </td> 
-        </tr> 
-        <tr>  
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Department</mat-label>
-                    <input matInput placeholder="Institution">
-                </mat-form-field>
-            </td> 
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Gender</mat-label>
-                    <mat-select placeholder="Select" class="example-full-width">
-                        <mat-option >Male</mat-option>
-                        <mat-option >Female</mat-option>
-                        <mat-option >Others</mat-option>
-                   </mat-select>
-               </mat-form-field>
-            </td>   
-            
-        </tr>
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email">
-                </mat-form-field>
-            </td> 
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Mobile</mat-label>
-                    <input matInput placeholder="Mobile">
-                </mat-form-field>
-            </td> 
-        </tr>
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-            </td>
-            <td> 
-                <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Project Description"></textarea>
-                </mat-form-field>
-            </td> 
-        </tr>
-    </table>
+        <!-- {{ coPiInformation | json }} -->
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.name" name="name" placeholder="name">
+                    </mat-form-field>
+                </td>   
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Designation</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.desination" name="desination" placeholder="Designation">
+                    </mat-form-field>
+                </td> 
+            </tr> 
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Qualifications</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.qualification" name="qualification" placeholder="Qualifications">
+                    </mat-form-field>
+                </td>   
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Institution</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.institution" name="institution" placeholder="Institution">
+                    </mat-form-field>
+                </td> 
+            </tr> 
+            <tr>  
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Department</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.department" name="department" placeholder="Institution">
+                    </mat-form-field>
+                </td> 
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Gender</mat-label>
+                        <mat-select matInput [(ngModel)]="coPiInformation.gender" name="gender" placeholder="Select" class="example-full-width">
+                            <mat-option  value="Male">Male</mat-option>
+                            <mat-option  value="Female">Female</mat-option>
+                            <mat-option  value="Others">Others</mat-option>
+                       </mat-select>
+                   </mat-form-field>
+                </td>   
+                
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.email" name="email" placeholder="Email">
+                    </mat-form-field>
+                </td> 
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mobile</mat-label>
+                        <input matInput [(ngModel)]="coPiInformation.mobile" name="mobile" placeholder="Mobile">
+                    </mat-form-field>
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="coPiInformation.dataOfBirth" name="dataOfBirth"  placeholder="Date of Birth">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </td>
+                <td> 
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput [(ngModel)]="coPiInformation.address" name="address" placeholder="Address"></textarea>
+                    </mat-form-field>
+                </td> 
+            </tr>
+        </table>
 </form>
 
 <div class="container text-center">
