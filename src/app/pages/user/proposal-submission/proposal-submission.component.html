@@ -3,21 +3,6 @@
       <h2 class="text-center mt-4">Proposal Submission</h2>
       <div class="col-md-9 mx-auto">
         <app-stepper [linearModeSelected]="false" #appStepper>
-          <!-- <cdk-step [label]="'Project Information'"> 
-            <app-information></app-information>
-          </cdk-step>
-          <cdk-step [label]="'PI Information'">
-            <app-contact></app-contact>
-          </cdk-step>
-          <cdk-step [label]="'Co-PI Information'">
-            <app-security></app-security>
-          </cdk-step>
-          <cdk-step [label]="'Attachments'">
-            <app-finish></app-finish>
-          </cdk-step>
-          <cdk-step [label]="'Review and Finish'">
-            <app-finish></app-finish>
-          </cdk-step> -->
         <cdk-step [label]="'Project Information'">
             <app-project-info #projectInfo></app-project-info>
         </cdk-step>
@@ -37,9 +22,9 @@
       </div>
     </div>
   </div>
-  <p>
+  <!-- <p>
     {{projectInfo.projectInformationData| json}},
     {{piInfo.piInformation| json}},
     {{coPiInfo.coPiInformation| json}},
     {{upload.uploadAttachments| json}},
-</p>
+</p> -->

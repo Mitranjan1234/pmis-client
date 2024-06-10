@@ -41,5 +41,9 @@ export class ProjectInfoComponent implements OnInit {
   ngOnInit(): void {  
   }
 
+  onSave(): void {  
+    localStorage.setItem('projectInformationData', JSON.stringify(this.projectInformationData));
+  }
+
 }
 

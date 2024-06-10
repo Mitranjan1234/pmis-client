@@ -7,19 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProposalSubmissionComponent implements OnInit {
 
-//   @Input()
-//   projectInformationData: {
-//     projectTitle?: string,
-//     projectCategory?: string,
-//     projectDescription?: string,
-//     projectSubmsnType?: string,
-//     projectDuration?: string,
-//     amountRequested?: string,
-//     timeline?: {
-//         start_date?: string,
-//         end_date?: string
-//         }
-//   } = {};
+  @Input()
+  projectInformationData: {
+    projectTitle?: string,
+    projectCategory?: string,
+    projectDescription?: string,
+    projectSubmsnType?: string,
+    projectDuration?: string,
+    amountRequested?: string,
+    timeline?: {
+        start_date?: string,
+        end_date?: string
+        }
+  } = {};
   
 //   @Input() 
 //   piInformation : {
@@ -122,9 +122,13 @@ export class ProposalSubmissionComponent implements OnInit {
     
   //   }
 
+
+  
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.projectInformationData)
   }
+  
 
 }

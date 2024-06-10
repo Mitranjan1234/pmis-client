@@ -24,7 +24,7 @@ export class UploadAttachmentsComponent implements OnInit {
     onFileSelected(event: any) {
       if (event.target.files.length > 0) {
         this.selectedFile = event.target.files[0];
-        console.log(this.selectedFile);
+        console.log(this.selectedFile);   
       }
     }
     onUpload() {
@@ -38,5 +38,8 @@ export class UploadAttachmentsComponent implements OnInit {
       else {
         alert("Please select a file first")
       }
+    }
+    onSave(): void {  
+      localStorage.setItem('uploadAttachments', JSON.stringify(this.selectedFile?.name)); 
     }
 }

@@ -26,19 +26,18 @@
     <h1 class="text-center">Proposal Submission Review</h1>
     <div class="resume-section">
         <h2>Project Information</h2>
-        <app-project-info #projectInfo hidden></app-project-info>
-        <p><b>Project Title:</b>  {{projectInfo.projectInformationData.projectTitle}} </p>
-        <!-- <p><b>Project Category:</b>{{projectInfo.projectInformationData.projectCategory}} </p>
-        <p><b>Project Description: </b>{{projectInfo.projectInformationData.projectDescription}}</p>
-        <p><b>Project Duration:</b> {{projectInfo.projectInformationData.projectDuration}}</p>
-        <p><b>Amount Requested:</b> Rs{{projectInfo.projectInformationData.amountRequested}}</p>
-        <p><b>Proposed Project Start Date:</b>{{projectInfo.projectInformationData.timeline.start_date}} </p>
-        <p><b>Proposed Project End Date:</b> {{projectInfo.projectInformationData.timeline.end_date}} </p> -->
+        <p><b>Project Title:</b>  {{projectInformationData}} </p>
+        <!-- <p><b>Project Category:</b>{{projectInformationData.projectCategory}} </p>
+        <p><b>Project Description: </b>{{projectInformationData.projectDescription}}</p>
+        <p><b>Project Duration:</b> {{projectInformationData.projectDuration}}</p>
+        <p><b>Amount Requested:</b> Rs{{projectInformationData.amountRequested}}</p>
+        <p><b>Proposed Project Start Date:</b>{{projectInformationData.timeline.start_date}} </p>
+        <p><b>Proposed Project End Date:</b> {{projectInformationData.timeline.end_date}} </p> -->
     </div>
 
     <div class="resume-section">
         <h2>PI Information</h2>
-        <p>Name: </p>
+        <p>Name: </p> {{piInformation}}
         <p>Designation: </p>
         <p>Qualifications: </p>
         <p>Institution: </p>
@@ -52,7 +51,7 @@
 
     <div class="resume-section">
         <h2>Co-PI Information</h2>
-        <p>Name: </p>
+        <p>Name: </p> {{coPiInformation}}
         <p>Designation: </p>
         <p>Qualifications: </p>
         <p>Institution: </p>
@@ -67,8 +66,8 @@
     <div class="resume-section">
         <h2>Uploaded Files</h2>
         <ul>
-            <li>Project_Summary.pdf</li>
-            <li>Budget_Justification.doc</li>
+            <li> {{uploadAttachments}}</li>
+
         </ul>
     </div>
 </body>
@@ -83,3 +82,6 @@
         Submit
     </button>
 </div>    
+<!-- <app-proposal-submission #projectInfo></app-proposal-submission> -->
+<!-- <app-upload-attachments #upload hidden></app-upload-attachments> -->
+<!-- <app-co-principal-investigator-info #coPiInfo></app-co-principal-investigator-info> -->

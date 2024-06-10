@@ -24,5 +24,7 @@ export class PrincipalInvestigatorInfoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSave(): void {  
+    localStorage.setItem('piInformation', JSON.stringify(this.piInformation));
+  }
 }
