@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { FileUploadService } from 'src/app/services/file-upload.service';
+import { ProposalService } from 'src/app/services/proposal.service';
 
 @Component({
   selector: 'app-upload-attachments',
@@ -19,7 +19,7 @@ export class UploadAttachmentsComponent implements OnInit {
     selectedFile: File | null = null;
     uploadProgress: number | null = null;
   
-    constructor(private fileUploadService: FileUploadService) { }
+    constructor(private proposalService: ProposalService) { }
 
     onFileSelected(event: any) {
       if (event.target.files.length > 0) {
@@ -29,7 +29,7 @@ export class UploadAttachmentsComponent implements OnInit {
     }
     onUpload() {
       if (this.selectedFile) {
-        this.fileUploadService.uploadfile(this.selectedFile).subscribe(
+        this.proposalService.uploadfile(this.selectedFile).subscribe(
           (res) => console.log(res),
           (err) => console.log(err)
         );

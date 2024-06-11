@@ -102,6 +102,11 @@ const routes: Routes = [
         component: FundManagementComponent,
       },
       {
+        path:'report-summery',
+        component: ReportSummeryComponent
+
+      },
+      {
         path: 'backup-module',
         component: BackupModuleComponent,
       },

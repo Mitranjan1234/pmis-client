@@ -1,12 +1,11 @@
-import { HttpClient, HttpErrorResponse, HttpEvent, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, catchError, map, throwError } from 'rxjs';
 import baseUrl from './helper';
 
 @Injectable({
     providedIn: 'root',
 })
-export class FileUploadService  {
+export class ProposalService  {
 
         constructor(private http: HttpClient) { }
         public uploadfile(file: File) {
@@ -14,4 +13,8 @@ export class FileUploadService  {
             formParams.append('file', file)
             return this.http.post(`${baseUrl}/file/upload`, formParams);
           }
+
+        public submitProposal(proposalData: any) {
+        return this.http.post(`${baseUrl}/proposal/create`, proposalData);
+      }   
 }

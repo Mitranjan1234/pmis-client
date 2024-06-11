@@ -23,15 +23,15 @@ export class ProjectInfoComponent implements OnInit {
   // } = {};
 
   projectInformationData  = {
-    "projectTitle": "",
-    "projectCategory": "",
-    "projectDescription": "",
-    "projectSubmsnType": "",
-    "projectDuration": "",
-    "amountRequested":"",
-    "timeline": {
-            "start_date": "",
-            "end_date": "",
+    projectTitle: "",
+    projectCategory: "",
+    projectDescription: "",
+    projectSubmsnType: "",
+    projectDuration: "",
+    amountRequested:"",
+    timeline: {
+            start_date: "",
+            end_date: "",
             }
     }
 
@@ -46,4 +46,5 @@ export class ProjectInfoComponent implements OnInit {
   }
 
 }
+
 

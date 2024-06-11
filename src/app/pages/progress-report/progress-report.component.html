@@ -1,1 +1,150 @@
-<p>progress-report works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Progress Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, section {
+            margin-bottom: 20px;
+        }
+        header {
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .completed {
+            color: green;
+        }
+        .in-progress {
+            color: orange;
+        }
+        .not-started {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Project Progress Report</h1>
+    <h2>Project Name: XYZ Project</h2>
+    <p>Report Date: <span id="reportDate"></span></p>
+</header>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>Project Manager: John Doe</p>
+    <p>Project Start Date: January 1, 2024</p>
+    <p>Estimated Completion Date: December 31, 2024</p>
+</section>
+
+<section>
+    <h2>Progress Summary</h2>
+    <p>Overall Status: <span class="status in-progress">In Progress</span></p>
+    <p>Percentage Complete: 45%</p>
+</section>
+
+<section>
+    <h2>Milestones</h2>
+    <table>
+        <tr>
+            <th>Milestone</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Initial Planning</td>
+            <td>January 31, 2024</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Design Phase</td>
+            <td>March 31, 2024</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Development Phase</td>
+            <td>August 31, 2024</td>
+            <td class="in-progress">In Progress</td>
+        </tr>
+        <tr>
+            <td>Testing Phase</td>
+            <td>November 30, 2024</td>
+            <td class="not-started">Not Started</td>
+        </tr>
+        <tr>
+            <td>Final Review</td>
+            <td>December 31, 2024</td>
+            <td class="not-started">Not Started</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Tasks</h2>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Assigned To</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Task 1</td>
+            <td>Alice Smith</td>
+            <td>February 15, 2024</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Task 2</td>
+            <td>Bob Johnson</td>
+            <td>April 15, 2024</td>
+            <td class="in-progress">In Progress</td>
+        </tr>
+        <tr>
+            <td>Task 3</td>
+            <td>Charlie Brown</td>
+            <td>July 15, 2024</td>
+            <td class="not-started">Not Started</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Issues and Concerns</h2>
+    <p>Issue 1: Delays in the development phase due to resource constraints.</p>
+    <p>Issue 2: Budget overruns in the design phase.</p>
+</section>
+
+<script>
+    // Set the current date for the report
+    document.getElementById("reportDate").textContent = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>
+

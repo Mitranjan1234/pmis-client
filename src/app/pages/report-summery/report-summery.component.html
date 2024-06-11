@@ -1,1 +1,76 @@
-<p>report-summery works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, section {
+            margin-bottom: 20px;
+        }
+        header {
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Project Report Summary</h1>
+    <h2>Project Name: XYZ Project</h2>
+    <p>Report Date: <span id="reportDate"></span></p>
+</header>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>Project Manager: John Doe</p>
+    <p>Project Start Date: January 1, 2024</p>
+    <p>Estimated Completion Date: December 31, 2024</p>
+</section>
+
+<section>
+    <h2>Executive Summary</h2>
+    <p>The XYZ Project is progressing well, with significant milestones achieved in the last reporting period. The project is currently in the development phase, with key components being implemented as planned. Despite a few challenges, the team is on track to meet the overall project goals.</p>
+</section>
+
+<section>
+    <h2>Key Achievements</h2>
+    <p>1. Completion of the design phase on time.</p>
+    <p>2. Successful deployment of the initial development environment.</p>
+    <p>3. Positive feedback from the initial stakeholder review.</p>
+</section>
+
+<section>
+    <h2>Current Issues</h2>
+    <p>1. <span class="highlight">Resource Constraints:</span> There have been some delays in the development phase due to limited availability of key resources.</p>
+    <p>2. <span class="highlight">Budget Overruns:</span> The project has experienced budget overruns in the design phase, primarily due to unforeseen expenses.</p>
+</section>
+
+<section>
+    <h2>Next Steps</h2>
+    <p>1. Address the resource constraints by reallocating team members and hiring additional temporary staff.</p>
+    <p>2. Conduct a detailed budget review and adjust the project plan to mitigate further overruns.</p>
+    <p>3. Continue with the development phase, focusing on the critical path items to ensure timely progress.</p>
+</section>
+
+<script>
+    // Set the current date for the report
+    document.getElementById("reportDate").textContent = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>

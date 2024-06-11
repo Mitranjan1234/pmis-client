@@ -26,7 +26,8 @@
     <h1 class="text-center">Proposal Submission Review</h1>
     <div class="resume-section">
         <h2>Project Information</h2>
-        <p><b>Project Title:</b>  {{projectInformationData}} </p>
+        {{projectInformationData}}
+        <!-- <p><b>Project Title:</b>  {{projectInformationData}} </p> -->
         <!-- <p><b>Project Category:</b>{{projectInformationData.projectCategory}} </p>
         <p><b>Project Description: </b>{{projectInformationData.projectDescription}}</p>
         <p><b>Project Duration:</b> {{projectInformationData.projectDuration}}</p>
@@ -37,7 +38,8 @@
 
     <div class="resume-section">
         <h2>PI Information</h2>
-        <p>Name: </p> {{piInformation}}
+        {{piInformation}}
+        <!-- <p>Name: </p>
         <p>Designation: </p>
         <p>Qualifications: </p>
         <p>Institution: </p>
@@ -46,12 +48,13 @@
         <p>Email: </p>
         <p>Mobile: </p>
         <p>Date of Birth: </p>
-        <p>Address: </p>
+        <p>Address: </p> -->
     </div>
 
     <div class="resume-section">
         <h2>Co-PI Information</h2>
-        <p>Name: </p> {{coPiInformation}}
+        {{coPiInformation}}
+        <!-- <p>Name: </p> 
         <p>Designation: </p>
         <p>Qualifications: </p>
         <p>Institution: </p>
@@ -60,14 +63,13 @@
         <p>Email: </p>
         <p>Mobile: </p>
         <p>Date of Birth: </p>
-        <p>Address: </p>
+        <p>Address: </p> -->
     </div>
 
     <div class="resume-section">
         <h2>Uploaded Files</h2>
         <ul>
             <li> {{uploadAttachments}}</li>
-
         </ul>
     </div>
 </body>
@@ -78,7 +80,7 @@
     <button class="button-row" mat-raised-button color="primary" cdkStepperPrevious>
         Go To Previous
     </button>
-    <button class="button-row" mat-raised-button color="primary">
+    <button class="button-row" mat-raised-button color="primary" (click)="onSubmit()">
         Submit
     </button>
 </div>    

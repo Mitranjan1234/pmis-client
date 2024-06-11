@@ -100,6 +100,7 @@ import { UploadAttachmentsComponent } from './pages/user/proposal-submission/upl
 import { ReviewSubmitComponent } from './pages/user/proposal-submission/review-submit/review-submit.component';
 import { TrackProposalComponent } from './pages/user/track-proposal/track-proposal.component';
 import { ProposalProgressComponent } from './pages/user/proposal-progress/proposal-progress.component';
+import { BackupRestoreComponent } from './src/app/pages/backup-restore/backup-restore.component';
 
 
 @NgModule({
@@ -136,6 +137,7 @@ import { ProposalProgressComponent } from './pages/user/proposal-progress/propos
     ReviewSubmitComponent,
     TrackProposalComponent,
     ProposalProgressComponent,
+    BackupRestoreComponent,
   ],
   imports: [
     BrowserModule,
