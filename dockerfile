@@ -13,6 +13,6 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf *
 
 #copy the built angular app from the build stage
-COPY --from=build /app/dist/pmis-client/browser .
+COPY --from=build /app/dist/pmis-client .
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
