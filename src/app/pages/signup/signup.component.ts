@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 
@@ -15,6 +16,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private userService: UserService,
     private snack: MatSnackBar,
+    private router: Router
   ) { }
 
   public user = {
@@ -92,7 +94,8 @@ export class SignupComponent implements OnInit {
         Swal.fire("Signup Success!", "Click ok for login.", "success").then((result) => {
           if (result.isConfirmed) {
             console.log("Response: ", response);
-            window.location.href = '/login';
+            //window.location.href = '/login';
+            this.router.navigate(['/login']);
           } else {
             Swal.fire("Signup Fail!", "Something went wrong.", "info");
           }
