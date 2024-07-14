@@ -30,4 +30,9 @@ export class UserService {
     return this.http.post(`${baseUrl}/user/reset-password`, resetUserPassData)
   }
 
+  // get all users
+  public getAllUsers() {
+    return this.http.post(`${baseUrl}/user/getUsers`,null);
+  }
+
 }

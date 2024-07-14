@@ -2,12 +2,13 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { UserService } from 'src/app/services/user.service';
 
 export interface Audience {
-  "name": string,
-  "userId": string,
-  "role" : string,
-  "status" : string,
+  name: string,
+  username: string,
+  role : string,
+  status : string,
 }
 
 export interface contact_details {
@@ -23,6 +24,14 @@ export interface contact_details {
 })
 
 export class ManageUsersComponent implements AfterViewInit {
+  constructor(public userService: UserService) {
+    // this.userService.getAllUsers().subscribe((response: any) => {
+    //   console.log("Load data");
+    //   res=response
+    //   //console.log(JSON.stringify(response));
+    //   //USERS_DATA.push(response)
+    //   });
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -33,6 +42,7 @@ export class ManageUsersComponent implements AfterViewInit {
   }
 
   displayedColumns: string[] = ['name', 'userId','role','status','action'];
+
   dataSource = new MatTableDataSource<Audience>(USERS_DATA);
 
   @ViewChild(MatPaginator)
@@ -46,47 +56,50 @@ contacts: any;
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+  
 }
+
 
 const USERS_DATA: Audience[] = [
   {
-    "name": "Amit",
-    "userId": "amit.k@gmail.com",
-    "role" :"Project PI",
-    "status" :"Active",
+    name: "Amit",
+    username: "amit.k@gmail.com",
+    role :"Project PI",
+    status :"Active",
    
   },
+ 
   {
     "name": "Mitranjan",
-    "userId": "mitranjan.k@gmail.com",
+    "username": "mitranjan.k@gmail.com",
     "role" :"CWDB personnels",
     "status" :"Active",
    
   },
   {
     "name": "Ravi",
-    "userId": "ravi.k@gmail.com",
+    "username": "ravi.k@gmail.com",
     "role" :"Project PI",
     "status" :"Active",
    
   },
   {
     "name": "Nilesh",
-    "userId": "nilesh.k@gmail.com",
+    "username": "nilesh.k@gmail.com",
     "role" :"CWDB personnels",
     "status" :"Active",
    
   },
   {
     "name": "Kamlesh",
-    "userId": "kamlesh.k@gmail.com",
+    "username": "kamlesh.k@gmail.com",
     "role" :"Project PI",
     "status" :"Active",
    
   },
   {
     "name": "Sukesh",
-    "userId": "sukesh.k@gmail.com",
+    "username": "sukesh.k@gmail.com",
     "role" :"CWDB personnels",
     "status" :"Active",
    

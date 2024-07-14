@@ -94,7 +94,6 @@ export class SignupComponent implements OnInit {
         Swal.fire("Signup Success!", "Click ok for login.", "success").then((result) => {
           if (result.isConfirmed) {
             console.log("Response: ", response);
-            //window.location.href = '/login';
             this.router.navigate(['/login']);
           } else {
             Swal.fire("Signup Fail!", "Something went wrong.", "info");
