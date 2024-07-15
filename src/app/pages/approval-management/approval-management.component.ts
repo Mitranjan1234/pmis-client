@@ -5,13 +5,12 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { ApprovalService } from 'src/app/services/approval.service';
 
 export interface Approvals {
-  title: string,
-  category: string,
-  submissionType : string,
-  amount : string,
-  status:string,
+  projectTitle: string,
+  projectCategory: string,
+  projectSubmsnType : string,
+  projectDuration:string,
+  amountRequested : string,
 }
-
 @Component({
   selector: 'app-approval-management',
   templateUrl: './approval-management.component.html',
@@ -52,12 +51,3 @@ displayedColumns: string[] = ['title', 'category', 'submissionType','amount','st
 @ViewChild(MatSort) sort!: MatSort;
 
 }
-// const USERS_DATA: Audience[] = [
-//   {
-//     "name": "Artificial Intelligence for Social Impact: Leveraging AI for Positive Change",
-//     "userId": "Technology Development",
-//     "role" :"10000000",
-//     "status" :"36",
-//     "submissionType": "New Proposal"
-//   }
-// ]

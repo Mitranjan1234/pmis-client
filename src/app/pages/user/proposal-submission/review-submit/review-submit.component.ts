@@ -29,7 +29,7 @@ export class ReviewSubmitComponent implements OnInit {
     this.proposalData.set("uploadAttachments",this.uploadAttachments);
 
     const proposalObject = Object.fromEntries(this.proposalData);
-    alert(proposalObject)
+    //alert(JSON.stringify(proposalObject))
     this.proposalService.submitProposal(proposalObject).subscribe(response => {
       //alert(this.proposalData.get("projectInformationData"))
       Swal.fire("Submission Success!", "", "success").then((result) => {
