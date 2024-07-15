@@ -17,8 +17,6 @@ export class ChangePassDialogComponent implements OnInit {
 
   ngOnInit(): void { }
   onSubmit() {
-    console.log("changePassData:", this.changePassData);
-    alert("Change password form is submitting");
     this.userService.forgotUserPassword(this.changePassData).subscribe(response => {
       alert(response);
     });

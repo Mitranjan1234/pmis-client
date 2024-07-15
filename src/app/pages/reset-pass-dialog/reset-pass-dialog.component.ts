@@ -27,9 +27,6 @@ export class ResetPassDialogComponent implements OnInit {
       console.log(token);
 
     });
-    console.log("Username:", this.passData);
-    console.log("reset Form Submitted: ");
-    alert("Form Submitting: ");
     this.userService.resetUserPassword(this.passData).subscribe(response => {
       alert(response);
     });

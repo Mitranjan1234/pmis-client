@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -13,6 +14,7 @@ export class ForgotPasswordComponent implements OnInit {
   };
   constructor(
     private userService: UserService,
+    private router: Router,
     private snack: MatSnackBar) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class ForgotPasswordComponent implements OnInit {
     this.userService.forgotUserPassword(this.forgotPassData).subscribe((response: any) => {
       Swal.fire("Mail sent Success!", response.message, "success").then((result) => {
         if (result.isConfirmed) {
-          window.location.href = '/login';
+          this.router.navigate(['/login']);
         } else {
           Swal.fire("Signup Fail!", "Something went wrong.", "info");
         }
