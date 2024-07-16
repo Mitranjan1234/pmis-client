@@ -16,5 +16,9 @@ export class ProposalService  {
 
         public submitProposal(proposalData: any) {
         return this.http.post(`${baseUrl}/proposal/create`, proposalData);
-      }   
+        }   
+
+        public trackProposal(trackingDetails: any) {
+          return this.http.post(`${baseUrl}/proposal/track`, trackingDetails);
+          } 
 }

@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proposal-progress.component.css']
 })
 export class ProposalProgressComponent implements OnInit {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
 
   constructor() { }
 
