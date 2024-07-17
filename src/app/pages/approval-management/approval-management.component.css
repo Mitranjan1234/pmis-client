@@ -20,3 +20,7 @@ table {
   .button-row{
     margin: 5px 5px 5px 0;
   }
+  a:hover, .active{
+    color: rgb(98, 106, 255);
+    text-decoration: none; 
+}

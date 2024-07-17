@@ -20,5 +20,27 @@ export class ProposalService  {
 
         public trackProposal(trackingDetails: any) {
           return this.http.post(`${baseUrl}/proposal/track_prop`, trackingDetails);
+          }
+        public approveProposal(propId: any) {
+          const propJson={
+            propId: ""
+          }
+          propJson.propId=propId
+          return this.http.post(`${baseUrl}/proposal/approve_prop`, propJson);
           } 
-}
+        public rejectProposal(propId: any) {
+           const propJson={
+            propId: ""
+          }
+          propJson.propId=propId
+          return this.http.post(`${baseUrl}/proposal/reject_prop`, propJson);
+          }  
+          
+          public getProposalDataById(propId: any) {
+            const propJson={
+             propId: ""
+           }
+           propJson.propId=propId
+           return this.http.post(`${baseUrl}/proposal/get_prop_data_by_id`, propJson);
+           } 
+}        
