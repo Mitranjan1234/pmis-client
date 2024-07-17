@@ -19,6 +19,6 @@ export class ProposalService  {
         }   
 
         public trackProposal(trackingDetails: any) {
-          return this.http.post(`${baseUrl}/proposal/track`, trackingDetails);
+          return this.http.post(`${baseUrl}/proposal/track_prop`, trackingDetails);
           } 
 }

@@ -32,7 +32,7 @@ export class ReviewSubmitComponent implements OnInit {
     //alert(JSON.stringify(proposalObject))
     this.proposalService.submitProposal(proposalObject).subscribe(response => {
       //alert(this.proposalData.get("projectInformationData"))
-      Swal.fire("Submission Success!", "", "success").then((result) => {
+      Swal.fire("Submission Success!", "Details has been sent to your email.", "success").then((result) => {
         if (result.isConfirmed) {
           console.log("Response: ", response);
          // window.location.href = '/login';
