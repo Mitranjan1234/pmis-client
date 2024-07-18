@@ -51,7 +51,7 @@ onUpload() {
 
 onProposalProgSubmit() {
   this.proposalService.proposalProgressSubmit(this.proposalProgress).subscribe(response => {
-    Swal.fire("Signup Success!", "Click ok for login.", "success").then((result) => {
+    Swal.fire("Success!", "Proposal progress submitted sussccessfully.", "success").then((result) => {
   
     });
   });
