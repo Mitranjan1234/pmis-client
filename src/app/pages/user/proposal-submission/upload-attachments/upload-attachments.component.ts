@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProposalService } from 'src/app/services/proposal.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-upload-attachments',
   templateUrl: './upload-attachments.component.html',
@@ -29,11 +29,9 @@ export class UploadAttachmentsComponent implements OnInit {
     }
     onUpload() {
       if (this.selectedFile) {
-        this.proposalService.uploadfile(this.selectedFile).subscribe(
-          (res) => console.log(res),
-          (err) => console.log(err)
-        );
-        alert('Uploaded Successfully.');
+        this.proposalService.uploadfile(this.selectedFile).subscribe((response => {
+          Swal.fire("Success!","<b>Selected file " +this.selectedFile?.name+ "uploaded successfully.</b>", "success");
+        }));
       } 
       else {
         alert("Please select a file first")

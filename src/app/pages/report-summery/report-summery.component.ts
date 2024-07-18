@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report-summery.component.css']
 })
 export class ReportSummeryComponent implements OnInit {
-
+  currentDate = new Date();
   constructor() { }
 
   ngOnInit() {

@@ -13,22 +13,22 @@ export class ProgressReportComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  currentDate = new Date();
   progressReport =  {
-    "projectId": ""
+    "propId": ""
   }
 
   onSubmit(){
     if (
-      this.progressReport.projectId.trim() == '' ||
-      this.progressReport.projectId == null
+      this.progressReport.propId.trim() == '' ||
+      this.progressReport.propId == null
     ) {
       this.snack.open('Project id is required', '', {
         duration: 3000,
       });
     }
     this.proposalService.getProjectProgress(this.progressReport).subscribe(response => {
-          Swal.fire("Success!", JSON.stringify(response), "success");
+          Swal.fire("Success!","<b>Project Progress Data</b><br>"+ JSON.stringify(response), "success");
     });
   }
 }

@@ -55,17 +55,17 @@
         <div class="col-md-9 mx-auto">
           <mat-form-field class="input-field">
               <mat-label>Search progress report</mat-label>
-              <input matInput placeholder="Enter your project/proposal id" [(ngModel)]="progressReport.projectId" name="cnf_password" required>
+              <input matInput placeholder="Enter your project/proposal id" [(ngModel)]="progressReport.propId" name="cnf_password" required>
             </mat-form-field><br>
             <button mat-raised-button color="primary">Submit</button><br>
         </div>
-      </form>
-    <h2>Project Name: XYZ Project</h2>
-    <p>Report Date: <span id="reportDate"></span></p>
+      </form><br>
+      <p>Project Report Date: <span id="reportDate">{{currentDate | date:'dd-MM-yyyy'}}</span></p>
 </header>
 
 <section>
     <h2>Project Overview</h2>
+    <p>Project Name: CWDB</p>
     <p>Project PI Name: Mitranjan Kumar</p>
     <p>Project Start Date: January 1, 2024</p>
     <p>Estimated Completion Date: December 31, 2024</p>
@@ -149,10 +149,15 @@
     <p>Issue 2: Budget overruns in the design phase.</p>
 </section> -->
 
-<script>
+<!-- <script>
     // Set the current date for the report
-    document.getElementById("reportDate").textContent = new Date().toLocaleDateString();
-</script>
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    // This arrangement can be altered based on how we want the date's format to appear.
+    document.getElementById("reportDate").innerHTML =`${day}-${month}-${year}`;
+</script> -->
 
 </body>
 </html>

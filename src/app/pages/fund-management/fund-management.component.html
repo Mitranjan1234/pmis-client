@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fund Management Report</title>
+    <title>Project Progress Report</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,123 +33,140 @@
         th {
             background-color: #f4f4f4;
         }
+        .status {
+            font-weight: bold;
+        }
+        .completed {
+            color: green;
+        }
+        .in-progress {
+            color: orange;
+        }
+        .not-started {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Fund Management Report</h1>
-    <h2>Project Name: XYZ Project</h2>
-    <p>Report Date: <span id="reportDate"></span></p>
+    <h1>Project Fund Management</h1>
+    <form class="form-center" (ngSubmit)="onSubmit()">
+        <div class="col-md-9 mx-auto">
+          <mat-form-field class="input-field">
+              <mat-label>Search budget alloaction</mat-label>
+              <input matInput placeholder="Enter project/proposal id to get fund allocation" [(ngModel)]="projectFund.propId" name="cnf_password" required>
+            </mat-form-field><br>
+            <button mat-raised-button color="primary">Search</button><br>
+            
+        </div>
+      </form><br>
+      <p>Project Report Date: <span id="reportDate">{{currentDate | date:'dd-MM-yyyy'}}</span></p>
 </header>
 
 <section>
     <h2>Project Overview</h2>
-    <p>Project Manager: John Doe</p>
+    <p>Project Name: CWDB</p>
+    <p>Project PI Name: Mitranjan Kumar</p>
     <p>Project Start Date: January 1, 2024</p>
     <p>Estimated Completion Date: December 31, 2024</p>
 </section>
-
 <section>
-    <h2>Budget Overview</h2>
-    <table>
-        <tr>
-            <th>Budget Item</th>
-            <th>Allocated Budget</th>
-            <th>Spent to Date</th>
-            <th>Remaining Budget</th>
-        </tr>
-        <tr>
-            <td>Personnel</td>
-            <td>$500,000</td>
-            <td>$250,000</td>
-            <td>$250,000</td>
-        </tr>
-        <tr>
-            <td>Equipment</td>
-            <td>$200,000</td>
-            <td>$150,000</td>
-            <td>$50,000</td>
-        </tr>
-        <tr>
-            <td>Software</td>
-            <td>$100,000</td>
-            <td>$60,000</td>
-            <td>$40,000</td>
-        </tr>
-        <tr>
-            <td>Miscellaneous</td>
-            <td>$50,000</td>
-            <td>$20,000</td>
-            <td>$30,000</td>
-        </tr>
-    </table>
-</section>
-
-<section>
-    <h2>Expenses</h2>
-    <table>
-        <tr>
-            <th>Expense Item</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Salary Payment</td>
-            <td>$50,000</td>
-            <td>January 15, 2024</td>
-            <td>Monthly salary for project team</td>
-        </tr>
-        <tr>
-            <td>Software License</td>
-            <td>$30,000</td>
-            <td>February 1, 2024</td>
-            <td>Annual software licenses</td>
-        </tr>
-        <tr>
-            <td>Equipment Purchase</td>
-            <td>$100,000</td>
-            <td>March 10, 2024</td>
-            <td>Hardware for development</td>
-        </tr>
-    </table>
-</section>
-
-<section>
-    <h2>Funding Sources</h2>
-    <table>
-        <tr>
-            <th>Source</th>
-            <th>Amount</th>
-            <th>Date Received</th>
-            <th>Comments</th>
-        </tr>
-        <tr>
-            <td>Company Funds</td>
-            <td>$500,000</td>
-            <td>January 1, 2024</td>
-            <td>Initial project funding</td>
-        </tr>
-        <tr>
-            <td>Government Grant</td>
-            <td>$200,000</td>
-            <td>February 15, 2024</td>
-            <td>Grant for R&D</td>
-        </tr>
-        <tr>
-            <td>Investor Contribution</td>
-            <td>$150,000</td>
-            <td>March 1, 2024</td>
-            <td>Private investor funding</td>
-        </tr>
-    </table>
-</section>
-
-<script>
-    // Set the current date for the report
-    document.getElementById("reportDate").textContent = new Date().toLocaleDateString();
-</script>
-
+    <section>
+        <h2>Budget Overview</h2>
+        <table>
+            <tr>
+                <th>Budget Item</th>
+                <th>Allocated Budget in Rs</th>
+                <th>Spent to Date in Rs</th>
+                <th>Remaining Budget in Rs</th>
+            </tr>
+            <tr>
+                <td>Personnel</td>
+                <td>500,000</td>
+                <td>250,000</td>
+                <td>250,000</td>
+            </tr>
+            <tr>
+                <td>Equipment</td>
+                <td>200,000</td>
+                <td>150,000</td>
+                <td>50,000</td>
+            </tr>
+            <tr>
+                <td>Software</td>
+                <td>100,000</td>
+                <td>60,000</td>
+                <td>40,000</td>
+            </tr>
+            <tr>
+                <td>Miscellaneous</td>
+                <td>50,000</td>
+                <td>20,000</td>
+                <td>30,000</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Expenses</h2>
+        <table>
+            <tr>
+                <th>Expense Item</th>
+                <th>Amount in Rs</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Salary Payment</td>
+                <td>50,000</td>
+                <td>January 15, 2024</td>
+                <td>Monthly salary for project team</td>
+            </tr>
+            <tr>
+                <td>Software License</td>
+                <td>30,000</td>
+                <td>February 1, 2024</td>
+                <td>Annual software licenses</td>
+            </tr>
+            <tr>
+                <td>Equipment Purchase</td>
+                <td>100,000</td>
+                <td>March 10, 2024</td>
+                <td>Hardware for development</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Funding Sources</h2>
+        <table>
+            <tr>
+                <th>Source</th>
+                <th>Amountin Rs</th>
+                <th>Date Received</th>
+                <th>Comments</th>
+            </tr>
+            <tr>
+                <td>Company Funds</td>
+                <td>500,000</td>
+                <td>January 1, 2024</td>
+                <td>Initial project funding</td>
+            </tr>
+            <tr>
+                <td>Government Grant</td>
+                <td>200,000</td>
+                <td>February 15, 2024</td>
+                <td>Grant for R&D</td>
+            </tr>
+            <tr>
+                <td>Investor Contribution</td>
+                <td>150,000</td>
+                <td>March 1, 2024</td>
+                <td>Private investor funding</td>
+            </tr>
+        </table>
+    </section>
+</section><br>
 </body>
 </html>
