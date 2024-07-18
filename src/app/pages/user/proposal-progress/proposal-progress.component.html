@@ -1,5 +1,6 @@
 <form class="example-form">
-  <br><h2 class=" text-center">Upload Proposal Report</h2>
+  <br><h2 class=" text-center">Proposal Progress Report</h2><br>
+  <br><h2 class=" text-center">Upload Project Report</h2>
   <!-- <table class="example-full-width" cellspacing="0"> -->
 <p class="text-center">Note: Attach project progress peport, Budget utilization and Justification, Project closer report in any file fromate.</p>
 <div class="container text-center" >
@@ -30,7 +31,12 @@
 </div>
 <!-- </table> -->
 <section><br>
-  <h2>Milestones</h2>
+  <h2>Milestones for 
+    <mat-form-field class="input-field">
+      <mat-label>Project Id</mat-label>
+      <input matInput placeholder="Proposal/Project Id" [(ngModel)]="proposalProgress.propId" name="propId" required>
+    </mat-form-field>
+  </h2>
   <table>
       <tr>
           <th>Milestone Name</th>

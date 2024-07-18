@@ -51,13 +51,22 @@
 
 <header>
     <h1>Project Progress Report</h1>
+    <form class="form-center" (ngSubmit)="onSubmit()">
+        <div class="col-md-9 mx-auto">
+          <mat-form-field class="input-field">
+              <mat-label>Search progress report</mat-label>
+              <input matInput placeholder="Enter your project/proposal id" [(ngModel)]="progressReport.projectId" name="cnf_password" required>
+            </mat-form-field><br>
+            <button mat-raised-button color="primary">Submit</button><br>
+        </div>
+      </form>
     <h2>Project Name: XYZ Project</h2>
     <p>Report Date: <span id="reportDate"></span></p>
 </header>
 
 <section>
     <h2>Project Overview</h2>
-    <p>Project Manager: John Doe</p>
+    <p>Project PI Name: Mitranjan Kumar</p>
     <p>Project Start Date: January 1, 2024</p>
     <p>Estimated Completion Date: December 31, 2024</p>
 </section>
@@ -102,9 +111,9 @@
             <td class="not-started">Not Started</td>
         </tr>
     </table>
-</section>
+</section><br>
 
-<section>
+<!-- <section>
     <h2>Tasks</h2>
     <table>
         <tr>
@@ -132,13 +141,13 @@
             <td class="not-started">Not Started</td>
         </tr>
     </table>
-</section>
+</section> -->
 
-<section>
+<!-- <section>
     <h2>Issues and Concerns</h2>
     <p>Issue 1: Delays in the development phase due to resource constraints.</p>
     <p>Issue 2: Budget overruns in the design phase.</p>
-</section>
+</section> -->
 
 <script>
     // Set the current date for the report

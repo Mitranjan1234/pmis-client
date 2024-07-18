@@ -48,6 +48,10 @@ export class ProposalService  {
             return this.http.post(`${baseUrl}/proposal/submit_prop_prog_data`,proposalProgressData);
            } 
 
+           public getProjectProgress(proposalProgressData :any){
+            return this.http.post(`${baseUrl}/proposal/get_prop_prog_data`,proposalProgressData);
+           }
+
 
           
 }        

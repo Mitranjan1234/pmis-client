@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProposalService } from 'src/app/services/proposal.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-proposal-progress',
   templateUrl: './proposal-progress.component.html',
@@ -10,6 +12,7 @@ export class ProposalProgressComponent implements OnInit {
   ngOnInit(): void {
   }
   proposalProgress =  {
+    "propId":"",
     "progressReport": "",
     "utilizationReport": "",
     "closerReport": "",
@@ -28,7 +31,7 @@ export class ProposalProgressComponent implements OnInit {
 selectedFile: File | null = null;
 uploadProgress: number | null = null;
 
-constructor(private proposalService: ProposalService) { }
+constructor(private proposalService: ProposalService,private snack: MatSnackBar) { }
 
 onFileSelected(event: any) {
   if (event.target.files.length > 0) {
@@ -50,11 +53,22 @@ onUpload() {
 }
 
 onProposalProgSubmit() {
-  this.proposalService.proposalProgressSubmit(this.proposalProgress).subscribe(response => {
-    Swal.fire("Success!", "Proposal progress submitted sussccessfully.", "success").then((result) => {
-  
+  if (
+    this.proposalProgress.propId.trim() == '' ||
+    this.proposalProgress.propId == null
+  ) {
+    this.snack.open('Project id is required', '', {
+      duration: 3000,
     });
-  });
+  }
+  else{
+    this.proposalService.proposalProgressSubmit(this.proposalProgress).subscribe(response => {
+      Swal.fire("Success!", "Proposal progress submitted sussccessfully.", "success").then((result) => {
+    
+      });
+    });
+  }
+  
 }
   
 

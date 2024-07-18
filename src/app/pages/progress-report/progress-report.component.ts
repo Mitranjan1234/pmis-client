@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProposalService } from 'src/app/services/proposal.service';
+import Swal from 'sweetalert2';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-progress-report',
   templateUrl: './progress-report.component.html',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressReportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snack: MatSnackBar, private proposalService:ProposalService) { }
 
   ngOnInit() {
   }
 
+  progressReport =  {
+    "projectId": ""
+  }
+
+  onSubmit(){
+    if (
+      this.progressReport.projectId.trim() == '' ||
+      this.progressReport.projectId == null
+    ) {
+      this.snack.open('Project id is required', '', {
+        duration: 3000,
+      });
+    }
+    this.proposalService.getProjectProgress(this.progressReport).subscribe(response => {
+          Swal.fire("Success!", JSON.stringify(response), "success");
+    });
+  }
 }
