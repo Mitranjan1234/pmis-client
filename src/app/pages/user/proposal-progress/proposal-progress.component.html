@@ -1,16 +1,145 @@
-
-<div class="container">
-    <div class="row">
-      <h2 class="text-center mt-4">Proposal Progress </h2>
-      <form class="form-center" (ngSubmit)="onSubmit()">
-      <div class="col-md-9 mx-auto">
-        <mat-form-field class="input-field">
-            <mat-label>Mileston</mat-label>
-            <!-- <input matInput placeholder="Enter your tracking id" [(ngModel)]="trackingDetails.trackId"
-              name="cnf_password" required> -->
-          </mat-form-field><br>
-          <button mat-raised-button color="primary">Submit</button>
-      </div>
-    </form>
-    </div>
+<form class="example-form">
+  <br><h2 class=" text-center">Upload Proposal Report</h2>
+  <!-- <table class="example-full-width" cellspacing="0"> -->
+<p class="text-center">Note: Attach project progress peport, Budget utilization and Justification, Project closer report in any file fromate.</p>
+<div class="container text-center" >
+  <h2>Upload Project Progress Peport</h2>
+  <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="proposalProgress.progressReport" name="progressReport">
+  <button (click)="onUpload()">Upload</button>
+  <div *ngIf="uploadProgress !== null">
+    <p>Upload Progress: {{ uploadProgress }}%</p>
   </div>
+</div>
+
+<div class="container text-center">
+  <h2>Upload Project Budget Utilization and Justification</h2>
+  <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="proposalProgress.utilizationReport" name="utilizationReport" >
+  <button (click)="onUpload()">Upload</button>
+  <div *ngIf="uploadProgress !== null">
+    <p>Upload Progress: {{ uploadProgress }}%</p>
+  </div>
+</div>
+
+<div class="container text-center">
+  <h2>Upload Project Closer Report</h2>
+  <input type="file"  name="file" (change)="onFileSelected($event)"[(ngModel)]="proposalProgress.closerReport" name="closerReport" >
+  <button (click)="onUpload()">Upload</button>
+  <div *ngIf="uploadProgress !== null">
+    <p>Upload Progress: {{ uploadProgress }}%</p>
+  </div>
+</div>
+<!-- </table> -->
+<section><br>
+  <h2>Milestones</h2>
+  <table>
+      <tr>
+          <th>Milestone Name</th>
+          <th>Due Date</th>
+          <th>Status</th>
+      </tr>
+      <tr>
+          <td>Initial Planning</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerpd" [(ngModel)]="proposalProgress.planningDate" name="planningDate"  placeholder="Planning Date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix  [for]="pickerpd"></mat-datepicker-toggle>
+              <mat-datepicker #pickerpd></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select matInput [(ngModel)]="proposalProgress.planningStatus" name="planningStatus" placeholder="Select" class="example-full-width">
+                  <mat-option  value="Completed">Completed</mat-option>
+                  <mat-option  value="In Progress">In Progress</mat-option>
+                  <mat-option  value="Not Started">Not Started</mat-option>
+             </mat-select>
+            </mat-form-field>
+          </td>
+      </tr>
+      <tr>
+          <td>Design Phase</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerdd" [(ngModel)]="proposalProgress.designDate" name="designDate"  placeholder="Design Date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix  [for]="pickerdd"></mat-datepicker-toggle>
+              <mat-datepicker #pickerdd></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select matInput [(ngModel)]="proposalProgress.designStatus" name="designStatus" placeholder="Select" class="example-full-width">
+                  <mat-option  value="Completed">Completed</mat-option>
+                  <mat-option  value="In Progress">In Progress</mat-option>
+                  <mat-option  value="Not Started">Not Started</mat-option>
+             </mat-select>
+            </mat-form-field>
+          </td>
+      </tr>
+      <tr>
+          <td>Development Phase</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerdevd" [(ngModel)]="proposalProgress.developmentDate" name="developmentDate"  placeholder="Development Date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix  [for]="pickerdevd"></mat-datepicker-toggle>
+              <mat-datepicker #pickerdevd></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select matInput [(ngModel)]="proposalProgress.developmentStatus" name="developmentStatus" placeholder="Select" class="example-full-width">
+                  <mat-option  value="Completed">Completed</mat-option>
+                  <mat-option  value="In Progress">In Progress</mat-option>
+                  <mat-option  value="Not Started">Not Started</mat-option>
+             </mat-select>
+            </mat-form-field>
+          </td>
+      </tr>
+      <tr>
+          <td>Testing Phase</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickertd" [(ngModel)]="proposalProgress.testingDate" name="testingDate"  placeholder="Testing Date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix  [for]="pickertd"></mat-datepicker-toggle>
+              <mat-datepicker #pickertd></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select matInput [(ngModel)]="proposalProgress.testingStatus" name="testingStatus" placeholder="Select" class="example-full-width">
+                  <mat-option  value="Completed">Completed</mat-option>
+                  <mat-option  value="In Progress">In Progress</mat-option>
+                  <mat-option  value="Not Started">Not Started</mat-option>
+             </mat-select>
+            </mat-form-field>
+          </td>
+      </tr>
+      <tr>
+          <td>Final Review</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerfrd" [(ngModel)]="proposalProgress.finalReviewDate" name="finalDate"  placeholder="Final Review Date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix  [for]="pickerfrd"></mat-datepicker-toggle>
+              <mat-datepicker #pickerfrd></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select matInput [(ngModel)]="proposalProgress.finalReviewStatus" name="finalReviewStatus" placeholder="Select" class="example-full-width">
+                  <mat-option  value="Completed">Completed</mat-option>
+                  <mat-option  value="In Progress">In Progress</mat-option>
+                  <mat-option  value="Not Started">Not Started</mat-option>
+             </mat-select>
+            </mat-form-field>
+          </td>
+      </tr>
+  </table>
+</section>
+<div class="container text-center"> <br>
+  <button class="button-row" mat-raised-button color="primary" (click)="onProposalProgSubmit()">Submit</button>
+</div><br>
+</form>

@@ -43,4 +43,11 @@ export class ProposalService  {
            propJson.propId=propId
            return this.http.post(`${baseUrl}/proposal/get_prop_data_by_id`, propJson);
            } 
+
+           public proposalProgressSubmit(proposalProgressData: any) {
+            return this.http.post(`${baseUrl}/proposal/submit_prop_prog_data`,proposalProgressData);
+           } 
+
+
+          
 }        

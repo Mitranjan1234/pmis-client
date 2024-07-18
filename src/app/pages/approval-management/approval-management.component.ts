@@ -95,7 +95,6 @@ onReject(projectId: any) {
 }
 
 onApprovalView(projectId: any) {
-  alert(projectId)
   this.proposalService.getProposalDataById(projectId).subscribe(response => {
         Swal.fire("Success!","<b>View Proposal Data:</b> <br>"+JSON.stringify(response), "success");
   });

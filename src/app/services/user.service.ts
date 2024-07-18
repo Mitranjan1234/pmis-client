@@ -6,6 +6,7 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class UserService {
+  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,12 @@ export class UserService {
   // Login user function
   public loginUser(user: any) {
     return this.http.post(`${baseUrl}/user/login`, user)
+  }
+
+  public deleteUserByUsername(username: any){
+    const deleteUser={username:""}
+    deleteUser.username=username;
+    return this.http.post(`${baseUrl}/user/deleteUserByUsername`, deleteUser)
   }
 
   // forgot password
