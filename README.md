@@ -35,4 +35,6 @@ npm install -g @angular/cli@17
 npm install
 
 ## Run app
-npm start
+npm start 
+
+http://3.27.185.238:4200/
