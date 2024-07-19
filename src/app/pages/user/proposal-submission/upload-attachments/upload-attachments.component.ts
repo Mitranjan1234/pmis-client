@@ -18,7 +18,6 @@ export class UploadAttachmentsComponent implements OnInit {
     }
     selectedFile: File | null = null;
     uploadProgress: number | null = null;
-  
     constructor(private proposalService: ProposalService) { }
 
     onFileSelected(event: any) {
@@ -30,7 +29,7 @@ export class UploadAttachmentsComponent implements OnInit {
     onUpload() {
       if (this.selectedFile) {
         this.proposalService.uploadfile(this.selectedFile).subscribe((response => {
-          Swal.fire("Success!","<b>Selected file " +this.selectedFile?.name+ "uploaded successfully.</b>", "success");
+          Swal.fire("Success!","<b>Selected file " +this.selectedFile?.name+ " uploaded successfully.</b>", "success");
         }));
       } 
       else {
