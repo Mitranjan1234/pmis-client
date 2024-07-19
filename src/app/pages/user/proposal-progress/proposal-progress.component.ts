@@ -41,14 +41,12 @@ onFileSelected(event: any) {
 }
 onUpload() {
   if (this.selectedFile) {
-    this.proposalService.uploadfile(this.selectedFile).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
-    );
-    alert('Uploaded Successfully.');
+    this.proposalService.uploadfile(this.selectedFile).subscribe(response => {
+      Swal.fire("Success!","<b>Selected file " +this.selectedFile?.name+ " uploaded successfully.</b>", "success");
+  });
   } 
   else {
-    alert("Please select a file first")
+    Swal.fire("Alert!","Please select a file", "warning");
   }
 }
 
