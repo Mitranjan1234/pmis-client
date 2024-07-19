@@ -38,3 +38,7 @@ npm install
 npm start 
 
 http://3.27.185.238:4200/
+
+![image](https://github.com/user-attachments/assets/c03893ae-94ff-43fa-afef-87f8081c7b86)
+![image](https://github.com/user-attachments/assets/81a317a3-43be-48b4-924b-cdd05c61c8dd)
+
