@@ -1,10 +1,16 @@
 # PmisClient
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5. To run the application clone the code.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+## Install dependecy
+`npm install`
 
-## Development server
+## Install CLI
+`npm install -g @angular/cli@13.3.5`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Run Application
+To start the application run `npm start` or `ng serve`
+1) To run on local : http://localhost:4200/
+2) To run on EC2: http://54.252.148.88:4200/
 
 ## Code scaffolding
 
@@ -26,19 +32,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-
-
-## Install CLI
-npm install -g @angular/cli@17
-
-## Install dependecy
-npm install
-
-## Run app
-npm start 
-
-http://3.27.185.238:4200/
-
 ![image](https://github.com/user-attachments/assets/c03893ae-94ff-43fa-afef-87f8081c7b86)
-![image](https://github.com/user-attachments/assets/81a317a3-43be-48b4-924b-cdd05c61c8dd)
+![image](https://github.com/user-attachments/assets/7f445d89-f9e5-407e-8712-a368f63ca870)
+
 
